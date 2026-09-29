@@ -1,21 +1,19 @@
-# PRITAIKYK Studio
-Asmeninis AI įrankis mokomosioms užduotims diferencijuoti ir pritaikyti.
+# PRITAIKYK Studio – JPG / PNG / PDF + lokalus AI
 
-## Svarbu
-Tai nėra vien GitHub Pages projektas: `/api/transform.js` yra serverio funkcija. Paprasčiausias paleidimas – importuoti šį GitHub repository į Vercel ir Vercel projekto Environment Variables pridėti `OPENAI_API_KEY`.
+Asmeninė, be mokamo API veikianti prototipo versija.
 
-NIEKADA nerašyk API rakto į `index.html`, `transform.js` ar kitą GitHub failą.
+## Veikimas
+1. Įkeliamas JPG, PNG arba PDF.
+2. PDF tekstas nuskaitomas tiesiogiai; nuotraukoms ir skenuotiems PDF naudojamas Tesseract OCR (lietuvių + anglų kalbos).
+3. Atpažintą tekstą galima pataisyti.
+4. Pasirenkama „Pritaikyti vaikui“ arba „Diferencijuoti A–D“.
+5. WebLLM lokalus modelis generuoja rezultatą naršyklėje.
 
-## Failai
-- `index.html` – asmeninė sąsaja
-- `api/transform.js` – saugi AI serverio funkcija
-- `package.json` – projekto nustatymas
+## Kaina ir privatumas
+Nenaudojamas OpenAI API raktas. AI inferencija vyksta vartotojo naršyklėje. Bibliotekos ir modelio failai pirmą kartą atsisiunčiami iš interneto.
 
-## Dabartinės funkcijos
-- įklijuojamas užduoties tekstas / TXT
-- klasė ir dalykas
-- AI diferencijavimas A–D
-- AI pritaikymas pagal pasirinktus poreikius
-- rezultato redagavimas, kopijavimas, spausdinimas/PDF
+## Paleidimas
+Įkelkite `index.html` į GitHub Pages projekto šaknį. Rekomenduojama naujausia Chrome arba Edge su WebGPU.
 
-PDF/DOCX ir vaizdo nuskaitymas sąmoningai paliktas kitam etapui – pirmiausia tikriname AI transformacijos kokybę.
+## Ribojimai
+Tai lokalus prototipas. OCR gali klysti, ypač su matematine notacija ar prastos kokybės nuotraukomis. 1.5B lokalus modelis yra silpnesnis už didelius debesijos multimodalinius modelius. Sudėtingas vizualines užduotis jis interpretuoja per atpažintą tekstą, o ne pilną vaizdo semantinį supratimą.
