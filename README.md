@@ -1,28 +1,21 @@
-# PRITAIKYK
-
-Premium UI prototipas mokytojams: jau turimos mokomosios medžiagos pritaikymas individualiems poreikiams ir diferencijavimas klasei.
-
-## Paleidimas
-Projektas yra statinis, todėl papildomų paketų nereikia.
-
-1. Įkelkite `index.html`, `styles.css` ir `app.js` į GitHub repozitorijos šaknį.
-2. GitHub → Settings → Pages.
-3. Source: **Deploy from a branch** → `main` → `/ (root)` → Save.
-
-Taip pat galima tiesiog atidaryti `index.html` naršyklėje.
-
-## Kas veikia prototipe
-- responsyvus premium dashboard dizainas;
-- failo pasirinkimas ir drag & drop;
-- du produkto keliai: „Pritaikyti vaikui“ ir „Diferencijuoti klasei“;
-- kombinuotas abiejų režimų pasirinkimas;
-- poreikių žymėjimas;
-- A–D diferencijavimo lygiai;
-- rezultatų ekranas;
-- navigacija ir mobilus meniu.
+# PRITAIKYK Studio
+Asmeninis AI įrankis mokomosioms užduotims diferencijuoti ir pritaikyti.
 
 ## Svarbu
-Tai front-end MVP/prototipas. Tikram PDF/DOCX turinio nuskaitymui, AI transformacijoms, maketavimui, vartotojų paskyroms, failų saugojimui ir PDF eksportui reikės backend/API sluoksnio.
+Tai nėra vien GitHub Pages projektas: `/api/transform.js` yra serverio funkcija. Paprasčiausias paleidimas – importuoti šį GitHub repository į Vercel ir Vercel projekto Environment Variables pridėti `OPENAI_API_KEY`.
 
-## Produkto principas
-Ne „sugeneruok naują užduotį“, o „paimk mano pasirinktą užduotį ir padaryk ją prieinamą realiai klasei“, išsaugant mokymosi tikslą.
+NIEKADA nerašyk API rakto į `index.html`, `transform.js` ar kitą GitHub failą.
+
+## Failai
+- `index.html` – asmeninė sąsaja
+- `api/transform.js` – saugi AI serverio funkcija
+- `package.json` – projekto nustatymas
+
+## Dabartinės funkcijos
+- įklijuojamas užduoties tekstas / TXT
+- klasė ir dalykas
+- AI diferencijavimas A–D
+- AI pritaikymas pagal pasirinktus poreikius
+- rezultato redagavimas, kopijavimas, spausdinimas/PDF
+
+PDF/DOCX ir vaizdo nuskaitymas sąmoningai paliktas kitam etapui – pirmiausia tikriname AI transformacijos kokybę.
